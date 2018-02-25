@@ -1,0 +1,6 @@
+1. 认证服务器与授权服务器分离， sso-server，sso-client1，sso-client2项目拆分
+2. 将认证服务器的http basic登陆修改为自定义表单登陆
+3. 将认证服务器的授权页面进行改造，授权页由@FrameEndpoint注解的WhitelabelApprovalEndpoint类来控制跳转
+	，我们可以自定义@Controller类然后添加相应@RequestMapping路径来覆盖
+	，当@Controller 和 @FrameEndpoint拥有相同的@RequestMapping，则@Controller优先级更高
+	，因此可以把@FrameEndpoint当做一个可以覆盖的默认实现
